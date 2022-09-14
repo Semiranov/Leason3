@@ -41,7 +41,7 @@ int SumNegativeElements(int[] arr)
 }
 
 int[] array = GettArray(12, -9, 9);
-Console.WriteLine(string.Join(", ", array));
+Console.WriteLine("Наш массив: " + string.Join(", ", array));
 int sumPositive = SumPositiveElements(array);
 int sumNegative = SumNegativeElements(array);
 Console.Write($"Сумма положительных элементов = {sumPositive}, отрицательных {sumNegative}");

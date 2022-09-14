@@ -1,4 +1,5 @@
-﻿// Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+﻿// Задача 33: Задайте массив. Напишите программу, которая определяет, 
+//присутствует ли заданное число в массиве.
 // 4; массив [6, 7, 19, 345, 3] -> нет
 // -3; массив [6, 7, 19, 345, 3] -> да
 
@@ -28,4 +29,14 @@ bool IsNumberInArray(int[] array, int findNumber)
 
 int[] array = GettArray(10, -10, 10);
 Console.WriteLine(string.Join(", ", array));
-int fint = ReadNumber("Задайте число которое м")
+Console.WriteLine($"Введите число, которое ходите найти в массиве: ");
+int num = Convert.ToInt32(Console.ReadLine());
+bool fint = IsNumberInArray(array, num);
+if(fint == true)
+{
+    Console.WriteLine($"Число {num} присутствует в массиве");
+}
+else
+{
+    Console.WriteLine($"Число {num} отсутствует в массиве");
+}
