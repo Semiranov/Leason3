@@ -25,7 +25,7 @@ int[,] RandomArr(int lines, int columns, int leftnumrand, int rightnumrund) //м
     return arr;
 }
 
-void PrintArr(int[,] arr) //метод печати массива
+void PrintArr(int[,] arr) //метод печати
 {
     for(int i = 0; i < arr.GetLength(0); i++)
     {
