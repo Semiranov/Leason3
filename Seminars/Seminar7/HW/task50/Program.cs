@@ -38,7 +38,7 @@ int Enter(string mes) //метод ввода чисел
     return Convert.ToInt32(Console.ReadLine());
 }
 
-string Find(int[,] arr, int poz1, int poz2)
+string Find(int[,] arr, int poz1, int poz2) //метод поиска элемента
 {
     string mess = String.Empty;
     if(poz1 >= 0 && poz2 >= 0)
