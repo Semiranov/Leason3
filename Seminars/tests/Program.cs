@@ -1,20 +1,44 @@
-﻿Console.WriteLine("Введите сумму вклада: ");
-double num = Convert.ToDouble(Console.ReadLine());
-if(num > 0 && num < 100)
+﻿// Задача 46: Задайте двумерный массив размером m×n, 
+// заполненный случайными целыми числами.
+// m = 3, n = 4.
+// 1 4 8 19
+// 5 -2 33 -2
+// 77 3 8 1
+
+int ReadNam(string mess) //метод ввода числа
 {
-    num = num / 5 *100; 
+    Console.WriteLine(mess);
+    return Convert.ToInt32(Console.ReadLine());
 }
-else if(num >= 100 && num <=200)
+
+int[,] RandomArr(int lines, int columns, int leftnumrand, int rightnumrund) //метод заполнения массива рандомом
 {
-    num = num / 7 *100;
+    int[,] arr = new int[lines, columns];
+    Random rand = new Random();
+    for(int i = 0; i < arr.GetLength(0); i++)
+    {
+        for(int j = 0; j < arr.GetLength(1); j++)
+        {
+            arr[i, j] = rand.Next(leftnumrand, rightnumrund);
+        }
+    }
+    return arr;
 }
-else if(num > 200)
+
+void PrintArr(int[,] arr) //метод печати массива
 {
-    num = num / 10 *100;
-   
+    for(int i = 0; i < arr.GetLength(0); i++)
+    {
+        for(int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write($"{arr[i, j]} ");
+        }
+        Console.WriteLine();
+    }
 }
-else
-{
-    Console.WriteLine("Введен не верный процент"); 
-}
-Console.WriteLine($"Сумма вклада с процентами равна: {num}"); 
+
+int num1 = ReadNam("Введите колличество строк: ");
+int num2 = ReadNam("Введите колличество столбцов: ");
+int[,] array = RandomArr(num1, num2, 0, 9);
+PrintArr(array);
+
