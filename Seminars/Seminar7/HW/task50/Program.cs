@@ -43,11 +43,12 @@ string Find(int[,] arr, int poz1, int poz2) //метод поиска элеме
     string mess = String.Empty;
     if(poz1 >= 0 && poz2 >= 0)
     {
-        if(poz1 <= arr.GetLength(0) && poz2 <= arr.GetLength(1))
+        if(poz1 > 0 && poz2 > 0 && poz1 <= arr.GetLength(0) && poz2 <= arr.GetLength(1))
         {
-            mess = $"Значение элемента: {arr[poz1, poz2]}";
+            mess = $"Значение элемента: {arr[poz1 - 1, poz2 - 1]}";
         }
         else mess = "Такого элемента нет в массиве";
+        
     }
     else mess = "Индекс не может быть отрицательный!";
     return mess;

@@ -35,14 +35,14 @@ void PrintArr(int[,] arr) //метод печати массива
 double SrArifm(int[,] arr)
 {
     double rez = 0;
-    for(int i = 0; i < arr.GetLength(1); i++)  //счетчик столбцов
+    for(int i = 0; i < arr.GetLength(1); i++)  //счетчик столбцов    
     {
         for(int j = 0; j < arr.GetLength(0); j++)  //счетчик строк
         {
             rez = rez + arr[j, i]; 
         }
         rez = Math.Round(rez / arr.GetLength(0), 1);
-        Console.Write($"{rez} ");
+        Console.Write($"{rez}; ");
         rez = 0;
     }
     return rez;
