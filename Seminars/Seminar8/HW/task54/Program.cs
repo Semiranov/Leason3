@@ -13,9 +13,9 @@ int[,] MatrixRandom(int line, int column, int minrand, int maxrand) //запол
 {
     int[,] matr = new int[line, column];
     Random rand = new Random();
-    for(int i = 0; i < matr.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for(int j = 0; j < matr.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
             matr[i, j] = rand.Next(minrand, maxrand + 1);
         }
@@ -25,9 +25,9 @@ int[,] MatrixRandom(int line, int column, int minrand, int maxrand) //запол
 
 void MatrixOutput(int[,] matr) //вывод матрицы
 {
-    for(int i = 0; i < matr.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for(int j = 0; j < matr.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
             Console.Write($"{matr[i, j]} ");
         }
@@ -35,22 +35,24 @@ void MatrixOutput(int[,] matr) //вывод матрицы
     }
 }
 
-void MatrixSort(int[,] matr)  //сортировка матрицы от макс до мин
+void MatrixSort(int[,] matr)  //сортировка матрицы по возрастанию
 {
-   // int max = matr[0, 0];
-   for(int i = 0; i < matr.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++) //перебираем строки
     {
-        for(int j = 0; j < matr.GetLength(1); j++)
+        for (int k = 0; k < matr.GetLength(1); k++) //повторяем перебор элементов в строке
         {
-            if(matr[i, j] > matr[i, j + 1])
-            {
-                int temp = matr[i, j];
-                matr[i, j] = matr[i, j + 1];
-                matr[i, j + 1] = temp;
-            } 
-        }
 
-    } 
+            for (int j = 0; j < matr.GetLength(1) - 1; j++) //перебираем элементы в строке
+            {
+                if (matr[i, j] > matr[i, j + 1])
+                {
+                    int maxnum = matr[i, j];
+                    matr[i, j] = matr[i, j + 1];
+                    matr[i, j + 1] = maxnum;
+                }
+            }
+        }
+    }
 }
 
 int line = 3; //количество стррок
